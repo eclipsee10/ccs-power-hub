@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCS Power Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="loginScreen" class="login-screen active">
+        <div class="login-backdrop"></div>
+        <div class="login-shell">
+          <div class="brand-lockup">
+            <div class="brand-mark">CCS</div>
+            <div>
+              <div class="brand-title">CCS Power Hub</div>
+              <div class="brand-subtitle">Solar Backup Operations</div>
+            </div>
+          </div>
+
+          <div class="login-card">
+            <div class="login-header">
+              <span class="eyebrow">Access Portal</span>
+              <h1>Sign in</h1>
+            </div>
+
+            <div class="demo-accounts">
+              <button class="demo-btn active" data-user="superadmin">Super Admin</button>
+              <button class="demo-btn" data-user="admin">Admin</button>
+              <button class="demo-btn" data-user="user">User</button>
+            </div>
+
+            <form id="loginForm">
+              <label>
+                <span>Username</span>
+                <input id="username" type="text" value="superadmin" required />
+              </label>
+
+              <label>
+                <span>Password</span>
+                <input id="password" type="password" value="admin123" required />
+              </label>
+
+              <button class="primary-btn" type="submit">Login</button>
+            </form>
+
+            <div id="loginError" class="login-error" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="dashboardScreen" class="dashboard-screen">
+        <aside class="sidebar">
+          <div class="brand-block">
+            <div class="brand-mark small">CCS</div>
+            <div>
+              <div class="brand-title">CCS Power Hub</div>
+              <div class="brand-subtitle">Backup Operations</div>
+            </div>
+          </div>
+
+          <nav class="sidebar-nav">
+            <div class="nav-label">Workspace</div>
+            <button class="nav-item active">
+              <span class="nav-dot"></span>
+              <span>Overview</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-dot"></span>
+              <span>Power flow</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-dot"></span>
+              <span>Battery health</span>
+            </button>
+            <button class="nav-item">
+              <span class="nav-dot"></span>
+              <span>Event logs</span>
+            </button>
+          </nav>
+
+          <div class="sidebar-footer">
+            <div class="status-pill">
+              <span class="status-led"></span>
+              Systems protected
+            </div>
+
+            <div class="sidebar-actions">
+              <button class="text-action">Settings</button>
+              <button class="text-action">Help center</button>
+              <button id="logoutBtn" class="logout-btn">Log out</button>
+            </div>
+          </div>
+        </aside>
+
+        <main class="content-area">
+          <header class="topbar">
+            <div class="page-title">Solar Backup Power</div>
+
+            <div class="topbar-meta">
+              <div class="date-pill">Monday, September 21, 2026</div>
+              <span>Our Lady of Fatima University</span>
+              <div class="mini-badge">CCS</div>
+            </div>
+          </header>
+
+          <div class="inner-wrap">
+            <section class="hero-banner">
+              <div class="hero-badge">Operations Dashboard</div>
+              <div class="hero-wordmark">College of<br />Computer Studies</div>
+            </section>
+
+            <div class="section-header">
+              <div class="live-pill">Live System</div>
+            </div>
+
+            <div class="welcome-row">
+              <h2 id="welcomeMessage">Good afternoon, CCS.</h2>
+              <div class="updated">Updated 09:20 PM</div>
+            </div>
+
+            <section class="stats-grid">
+              <article class="stat-card">
+                <div class="stat-head">
+                  <span>System status</span>
+                  <span class="stat-icon">⚙</span>
+                </div>
+                <div class="stat-main">Ready</div>
+                <div class="stat-note">Autonomous backup is armed</div>
+              </article>
+
+              <article class="stat-card">
+                <div class="stat-head">
+                  <span>Battery level</span>
+                  <span class="stat-icon">⚡</span>
+                </div>
+                <div class="stat-main battery-main">
+                  83<span>%</span>
+                </div>
+                <div class="meter"><span></span></div>
+                <div class="stat-note strong-note">Healthy</div>
+              </article>
+
+              <article class="stat-card">
+                <div class="stat-head">
+                  <span>Current load</span>
+                  <span class="stat-icon">◔</span>
+                </div>
+                <div class="stat-main">284<span>W</span></div>
+                <div class="stat-note">Within safe operating range</div>
+              </article>
+
+              <article class="stat-card">
+                <div class="stat-head">
+                  <span>Backup time</span>
+                  <span class="stat-icon">◌</span>
+                </div>
+                <div class="stat-main">6.0<span>hours</span></div>
+                <div class="stat-note">Based on current load</div>
+              </article>
+            </section>
+
+            <section class="main-grid">
+              <div class="panel normal-panel">
+                <div class="panel-head">
+                  <div class="panel-title"><span>⚡</span> Power flow</div>
+                  <div class="panel-status">Normal operation</div>
+                </div>
+
+                <div class="metric-cards">
+                  <div class="metric-box">
+                    <div class="metric-icon solar">☀</div>
+                    <div class="metric-label">Solar input</div>
+                    <div class="metric-value">1.42 <small>kW</small></div>
+                  </div>
+
+                  <div class="metric-box">
+                    <div class="metric-icon inverter">↯</div>
+                    <div class="metric-label">Inverter</div>
+                    <div class="metric-value">12.4 <small>V</small></div>
+                  </div>
+
+                  <div class="metric-box">
+                    <div class="metric-icon loads">△</div>
+                    <div class="metric-label">Critical loads</div>
+                    <div class="metric-value">284 <small>W</small></div>
+                  </div>
+                </div>
+
+                <div class="info-row">
+                  <div class="info-box">
+                    <span>Grid input</span>
+                    <strong>Standby</strong>
+                  </div>
+                  <div class="info-box">
+                    <span>Inverter temp</span>
+                    <strong>31.8°C</strong>
+                  </div>
+                  <div class="info-box">
+                    <span>Outdoor</span>
+                    <strong>29°C · Sunny</strong>
+                  </div>
+                </div>
+              </div>
+
+              <aside class="panel battery-panel">
+                <div class="battery-header">
+                  <span class="tiny-label">Battery reserve</span>
+                  <span class="dot-menu">⋯</span>
+                </div>
+
+                <h3>Backup capacity</h3>
+
+                <div class="gauge-wrap">
+                  <div class="gauge">
+                    <div class="gauge-center">
+                      <div class="gauge-percent">83%</div>
+                      <div class="gauge-text">Battery SOC</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="charge-line">
+                  <span>+</span> Charging at 420 W
+                </div>
+                <div class="charge-detail">
+                  Full charge target is estimated at 11:40 AM tomorrow.
+                </div>
+
+                <div class="battery-mini-grid">
+                  <div class="mini-stat">
+                    <span>Battery V</span>
+                    <strong>12.6 V</strong>
+                  </div>
+                  <div class="mini-stat">
+                    <span>Battery temp</span>
+                    <strong>27.4°C</strong>
+                  </div>
+                </div>
+              </aside>
+            </section>
+
+            <section class="lower-grid">
+              <article class="panel compact-panel">
+                <div class="compact-header">Backup history</div>
+                <div class="chart-box">
+                  <svg viewBox="0 0 460 100" preserveAspectRatio="none" aria-label="Backup history chart">
+                    <path d="M0,72 C45,60 60,48 90,54 S145,25 180,31 S220,20 260,28 S315,12 360,18 S410,20 460,15 L460,100 L0,100 Z" fill="rgba(70,182,116,0.18)"></path>
+                    <path d="M0,72 C45,60 60,48 90,54 S145,25 180,31 S220,20 260,28 S315,12 360,18 S410,20 460,15" fill="none" stroke="#48b56c" stroke-width="3" stroke-linecap="round"></path>
+                  </svg>
+                </div>
+              </article>
+
+              <article class="panel compact-panel">
+                <div class="compact-header">Backup output</div>
+                <div class="chart-box amber-box">
+                  <svg viewBox="0 0 460 100" preserveAspectRatio="none" aria-label="Backup output chart">
+                    <path d="M0,78 C40,72 85,55 120,57 S170,32 210,44 S286,16 330,24 S400,18 460,20 L460,100 L0,100 Z" fill="rgba(242,170,57,0.15)"></path>
+                    <path d="M0,78 C40,72 85,55 120,57 S170,32 210,44 S286,16 330,24 S400,18 460,20" fill="none" stroke="#f0ad3a" stroke-width="3" stroke-linecap="round"></path>
+                  </svg>
+                </div>
+              </article>
+            </section>
+
+            <section id="adminControls" class="role-panel hidden">
+              <div class="panel-head">
+                <div class="panel-title"><span>🔧</span> System controls</div>
+                <div class="panel-status success">Authorized</div>
+              </div>
+
+              <div class="control-actions">
+                <button class="action-btn primary">Run self-test</button>
+                <button class="action-btn">Sync battery</button>
+                <button class="action-btn warning">Enable maintenance mode</button>
+              </div>
+            </section>
+
+            <section id="superAdminPanel" class="role-panel hidden">
+              <div class="panel-head">
+                <div class="panel-title"><span>👥</span> User management</div>
+                <div class="panel-status success">Super admin</div>
+              </div>
+
+              <div class="user-table">
+                <div class="table-row head-row">
+                  <span>Name</span>
+                  <span>Role</span>
+                  <span>Status</span>
+                </div>
+                <div class="table-row">
+                  <span>Alex Rivera</span>
+                  <span>Super Admin</span>
+                  <span class="status online">Online</span>
+                </div>
+                <div class="table-row">
+                  <span>Maria Santos</span>
+                  <span>Admin</span>
+                  <span class="status online">Online</span>
+                </div>
+                <div class="table-row">
+                  <span>Jordan Lee</span>
+                  <span>User</span>
+                  <span class="status idle">Idle</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
